@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import Donation from "./components/Donation";
 import Statistics from "./components/Statistics";
 import Banner from "./components/Banner";
+import DonationType from "./components/DonationType";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -12,6 +13,7 @@ export default function App() {
       path: "/",
       element: <Home />,
       children: [
+        { path: "/", element: <DonationType /> },
         {
           path: "/donation",
           element: <Donation />,
