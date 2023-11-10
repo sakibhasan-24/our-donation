@@ -4,6 +4,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./components/Home";
 import Donation from "./components/Donation";
 import Statistics from "./components/Statistics";
+import Banner from "./components/Banner";
 
 export default function App() {
   const router = createBrowserRouter([
