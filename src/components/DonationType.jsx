@@ -2,12 +2,13 @@ import React, { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import SingleDonation from "./SingleDonation";
+
 // import { AuthContext } from "./Banner";
 export default function DonationType() {
   const [donationList, setOfDonationList] = useState([]);
 
   useEffect(() => {
-    fetch("/donationDetails.json")
+    fetch("donationDetails.json")
       .then((res) => res.json())
       .then((data) => setOfDonationList(data));
   }, []);

@@ -10,7 +10,6 @@ export default function Header() {
       return true;
     }
   };
-  //   `background-image: url('../assests/Logo.png'') height: 400px" `
   return (
     <>
       <header className={` flex  items-center justify-between my-2 `}>

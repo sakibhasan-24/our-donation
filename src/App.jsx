@@ -20,7 +20,7 @@ export default function App() {
         { path: "/", element: <DonationType /> },
         {
           path: "/donation",
-          loader: () => fetch("/donationDetails.json"),
+          loader: () => fetch("donationDetails.json"),
           element: <Donation />,
         },
         {
