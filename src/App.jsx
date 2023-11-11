@@ -17,6 +17,7 @@ export default function App() {
         { path: "/", element: <DonationType /> },
         {
           path: "/donation",
+          loader: () => fetch("/donationDetails.json"),
           element: <Donation />,
         },
         { path: "/statistics", element: <Statistics /> },
