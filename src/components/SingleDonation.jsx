@@ -1,9 +1,17 @@
-import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function SingleDonation({ donation }) {
-  console.log(donation.card_bg);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const handleNavigateDonatePage = (donation) => {
+    navigate(`/donate-now/${donation.id}`);
+  };
+
   return (
-    <section className={`rounded-lg border-2  bg-[${donation.card_bg}]`}>
+    <section
+      onClick={() => handleNavigateDonatePage(donation)}
+      className={`rounded-lg border-2  bg-${donation.card_bg} cursor-pointer`}
+    >
       <div>
         <img className="rounded-md" src={donation.picture} alt="image" />
       </div>

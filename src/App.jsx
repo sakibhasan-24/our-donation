@@ -6,6 +6,7 @@ import Donation from "./components/Donation";
 import Statistics from "./components/Statistics";
 import Banner from "./components/Banner";
 import DonationType from "./components/DonationType";
+import DonateNow from "./components/DonateNow";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -19,6 +20,11 @@ export default function App() {
           element: <Donation />,
         },
         { path: "/statistics", element: <Statistics /> },
+        {
+          path: "/donate-now/:id",
+          loader: () => fetch("donationDetails.json"),
+          element: <DonateNow />,
+        },
       ],
     },
   ]);

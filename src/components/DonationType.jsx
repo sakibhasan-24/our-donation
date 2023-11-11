@@ -6,14 +6,14 @@ import SingleDonation from "./SingleDonation";
 export default function DonationType() {
   const [donationList, setOfDonationList] = useState([]);
   useEffect(() => {
-    fetch("../public/donationDetails.json")
+    fetch("/donationDetails.json")
       .then((res) => res.json())
       .then((data) => setOfDonationList(data));
   }, []);
   return (
     <div className="max-w-6xl gap-4 mx-2 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
-      {donationList.map((donation, idx) => (
-        <SingleDonation donation={donation} key={idx} />
+      {donationList.map((donation) => (
+        <SingleDonation donation={donation} key={donation.id} />
       ))}
     </div>
   );
