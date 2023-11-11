@@ -47,7 +47,7 @@ export default function Statistics() {
     );
   };
   return (
-    <div className="flex justify-center items-center mx-auto">
+    <div className="flex flex-col justify-center items-center w-2/3 mx-auto md:max-w-4xl">
       <PieChart width={400} height={400}>
         <Pie
           data={data}
@@ -64,7 +64,7 @@ export default function Statistics() {
           ))}
         </Pie>
       </PieChart>
-      <div className="flex items-center justify-center gap-4">
+      <div className="flex flex-col md:flex-row lg:flex-row  items-center justify-center md:gap-4 ">
         <h1 className="text-2xl text-[#FF0000]">total donation </h1>
         <h1 className="text-2xl text-[#00C49F]">Your donation </h1>
       </div>

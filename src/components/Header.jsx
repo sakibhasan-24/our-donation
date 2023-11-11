@@ -13,9 +13,9 @@ export default function Header() {
   //   `background-image: url('../assests/Logo.png'') height: 400px" `
   return (
     <>
-      <header className={` flex items-center justify-between my-2 `}>
-        <div className="ml-6">
-          <img src={logo} alt="logo" />
+      <header className={` flex  items-center justify-between my-2 `}>
+        <div className="w-2/3 md:w-full lg:w-full ">
+          <img src={logo} className="" alt="logo" />
         </div>
         <div>
           <ul className="flex justify-around space-x-7 mx-8 font-semibold">

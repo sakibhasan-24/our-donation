@@ -1,5 +1,5 @@
 .banner {
-  background-image: url("../assets/Education.png");
+  background-image: url("../assets/Health.png");
   height: 500px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -8,10 +8,4 @@
   /* filter: blur(0.9); */
 
   margin: 2rem 1rem;
-}
-.banner::after {
-  content: "";
-  background-image: black;
-  height: 500px;
-  /* opacity: 0.5; */
 }

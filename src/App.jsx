@@ -9,6 +9,7 @@ import DonationType from "./components/DonationType";
 import DonateNow from "./components/DonateNow";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ErrorPage from "./components/ErrorPage";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -32,6 +33,7 @@ export default function App() {
           loader: () => fetch("donationDetails.json"),
           element: <DonateNow />,
         },
+        { path: "*", element: <ErrorPage /> },
       ],
     },
   ]);

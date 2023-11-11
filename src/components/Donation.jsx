@@ -42,7 +42,7 @@ export default function Donation() {
       <button
         onClick={handleShowAll}
         className={`w-[200px] ml-28 my-10 bg-blue-600 border-0 text-white font-bold px-4 py-2 ${
-          initialLoad < 4 ? "hidden" : "visible"
+          givenDonate.length <= 4 ? "hidden" : ""
         }`}
       >
         See All
