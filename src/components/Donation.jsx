@@ -6,13 +6,10 @@ import SingleDonateItem from "./SingleDonateItem";
 export default function Donation() {
   const donateData = useLoaderData();
   const [givenDonate, setGivenDonate] = useState([]);
-
   const [initialLoad, setInitialLoad] = useState(4);
   useEffect(() => {
     const storedDonateList = getStoreDonateItems();
     if (donateData.length > 0) {
-      // const jobsApplied = jobs.filter(job => storedJobIds.includes(job.id));
-
       const donateList = [];
       for (const id of storedDonateList) {
         const donate = donateData.find((donate) => donate.id === id);
@@ -20,7 +17,6 @@ export default function Donation() {
           donateList.push(donate);
         }
       }
-
       setGivenDonate(donateList);
       // console.log(jobs, storedJobIds, jobsApplied)
     }
