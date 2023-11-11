@@ -4,9 +4,11 @@ import { storeInLocalStorage } from "../Db/localstorage";
 
 export default function DonateNow() {
   const data = useLoaderData();
+  //   console.log(data);
   const { id } = useParams();
-  const donate = data?.find((doanateData) => doanateData.id == id);
-  console.log(donate);
+  const donate = data.find((doanateData) => doanateData.id == id);
+  //   console.log(donate);
+  const idInt = Number(id);
   const handleReceivedDonate = () => {
     storeInLocalStorage(id);
   };

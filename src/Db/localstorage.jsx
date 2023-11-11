@@ -7,11 +7,10 @@ const getStoreDonateItems = () => {
 };
 
 const storeInLocalStorage = (donateId) => {
-  const numberDonateId = Number(donateId);
   const storedDonate = getStoreDonateItems();
-  const donateItems = storedDonate.find((donate) => donate === numberDonateId);
+  const donateItems = storedDonate.find((donate) => donate === donateId);
   if (!donateItems) {
-    storedDonate.push(numberDonateId);
+    storedDonate.push(donateId);
     localStorage.setItem("DonateList", JSON.stringify(storedDonate));
   }
 };

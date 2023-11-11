@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 export default function SingleDonation({ donation }) {
   const navigate = useNavigate();
-  const location = useLocation();
+
   const handleNavigateDonatePage = (donation) => {
     navigate(`/donate-now/${donation.id}`);
   };
