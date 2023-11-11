@@ -22,7 +22,11 @@ export default function App() {
           loader: () => fetch("/donationDetails.json"),
           element: <Donation />,
         },
-        { path: "/statistics", element: <Statistics /> },
+        {
+          path: "/statistics",
+          loader: () => fetch("donationDetails.json"),
+          element: <Statistics />,
+        },
         {
           path: "/donate-now/:id",
           loader: () => fetch("donationDetails.json"),

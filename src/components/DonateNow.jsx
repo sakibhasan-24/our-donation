@@ -1,16 +1,20 @@
 import React from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
-import { storeInLocalStorage } from "../Db/localstorage";
+import {
+  setValueInLocalStorage,
+  storeInLocalStorage,
+} from "../Db/localstorage";
 import { toast } from "react-toastify";
 
 export default function DonateNow() {
   const data = useLoaderData();
   //   console.log(data);
   const { id } = useParams();
-  const donate = data.find((doanateData) => doanateData.id == id);
+  const donate = data?.find((doanateData) => doanateData.id == id);
   //   console.log(donate);
   const idInt = Number(id);
   const handleReceivedDonate = () => {
+    setValueInLocalStorage("price", Number(donate.price));
     toast.success(`thanks we get your donation for ${donate.category}`);
     storeInLocalStorage(id);
   };

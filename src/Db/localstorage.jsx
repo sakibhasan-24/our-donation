@@ -12,4 +12,20 @@ const storeInLocalStorage = (donateId) => {
   storedDonate.push(donateId);
   localStorage.setItem("DonateList", JSON.stringify(storedDonate));
 };
-export { getStoreDonateItems, storeInLocalStorage };
+
+const setValueInLocalStorage = (keyName, strValue) => {
+  const previousValue = getValue("price");
+  const newPreviousValue = Number(previousValue);
+  const newValue = newPreviousValue + Number(strValue);
+  localStorage.setItem("price", newValue);
+};
+const getValue = (strValue) => {
+  return localStorage.getItem(strValue);
+};
+
+export {
+  getStoreDonateItems,
+  storeInLocalStorage,
+  setValueInLocalStorage,
+  getValue,
+};
