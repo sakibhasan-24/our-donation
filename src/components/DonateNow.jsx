@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { storeInLocalStorage } from "../Db/localstorage";
+import { toast } from "react-toastify";
 
 export default function DonateNow() {
   const data = useLoaderData();
@@ -10,6 +11,7 @@ export default function DonateNow() {
   //   console.log(donate);
   const idInt = Number(id);
   const handleReceivedDonate = () => {
+    toast.success(`thanks we get your donation for ${donate.category}`);
     storeInLocalStorage(id);
   };
   return (

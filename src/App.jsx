@@ -7,6 +7,8 @@ import Statistics from "./components/Statistics";
 import Banner from "./components/Banner";
 import DonationType from "./components/DonationType";
 import DonateNow from "./components/DonateNow";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function App() {
   const router = createBrowserRouter([
@@ -29,5 +31,10 @@ export default function App() {
       ],
     },
   ]);
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />
+      <ToastContainer />
+    </>
+  );
 }
