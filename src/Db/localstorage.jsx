@@ -9,9 +9,7 @@ const getStoreDonateItems = () => {
 const storeInLocalStorage = (donateId) => {
   const storedDonate = getStoreDonateItems();
   const donateItems = storedDonate.find((donate) => donate === donateId);
-  if (!donateItems) {
-    storedDonate.push(donateId);
-    localStorage.setItem("DonateList", JSON.stringify(storedDonate));
-  }
+  storedDonate.push(donateId);
+  localStorage.setItem("DonateList", JSON.stringify(storedDonate));
 };
 export { getStoreDonateItems, storeInLocalStorage };
